@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densityDpi=device-dpi" />
+
+    <script src="responsivevoice.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+
+<body>
+    <img width="240px" src="https://www.elheraldo.co/sites/default/files/styles/width_860/public/articulo/2017/05/09/choco.jpg?itok=UK4FuQ9n" alt="">
+    <p id="text">Confirman liberación de los ocho secuestrados por el ELN en Chocó. El presidente Juan Manuel Santos hizo el anuncio en su perfil de Twitter. Las víctimas habían sido secuestradas el domingo pasado. El Presidente de la República, Juan Manuel Santos,
+        anunció la liberación de las ocho personas quienes habían sido secuestradas el domingo pasado en el Chocó. La liberación se dio en la zona del Alto Timaná a líderes comunales.</p>
+    <!--<select id="voiceselection"></select>-->
+
+    <input onclick="responsiveVoice.speak($('#text').text(),'Spanish Latin American Female');" type="button" value="Escuchar" />
+    <input onclick="responsiveVoice.pause();" type="button" value="Pausar" />
+    <input onclick="responsiveVoice.resume();" type="button" value="Continuar" />
+    <input onclick="responsiveVoice.cancel();" type="button" value="Cancelar" />
+    <script>
+        //Populate voice selection dropdown
+
+        responsiveVoice.pause();
+
+        responsiveVoice.resume();
+
+        var voicelist = responsiveVoice.getVoices();
+        var vselect = $("#voiceselection");
+        $.each(voicelist, function() {
+            vselect.append($("<option />").val(this.name).text(this.name));
+        });
+    </script>
+</body>
+
+</html>
